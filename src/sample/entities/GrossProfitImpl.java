@@ -1,7 +1,7 @@
 package sample.entities;
 
 public class GrossProfitImpl implements GrossProfit {
-    private double amount = Double.NaN;
+    protected double amount = Double.NaN;
 
     @Override
     public double getAmount() {

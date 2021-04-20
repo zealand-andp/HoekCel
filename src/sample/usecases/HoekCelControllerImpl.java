@@ -5,7 +5,7 @@ import sample.entities.*;
 import java.util.ArrayList;
 
 public class HoekCelControllerImpl implements HoekCelController {
-    private GrossProfit gp;
+    protected GrossProfit gp;
     private PromotionalCost pc;
     private MarketingContribution mc;
     private ArrayList<Observer> observers = new ArrayList<Observer>();
