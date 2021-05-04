@@ -1,4 +1,4 @@
-package sample.usecases;
+package sample.entities;
 
 public class GrossProfitNotDefinedException extends RuntimeException {
 }
