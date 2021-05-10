@@ -15,10 +15,18 @@ public class HoekCelControllerImpl implements HoekCelController {
         if (gp == null || !gp.hasAmount())
             throw new GrossProfitNotDefinedException();
 
-        pc = new PromotionalCostImpl(promotionalCosts);
-        mc = new MarketingContributionImpl(gp, pc);
+        pc = newPromotionalCost(promotionalCosts);
+        mc = newMarketingContribution(gp, pc);
 
         notifyObservers();
+    }
+
+    protected PromotionalCost newPromotionalCost(double promotionalCosts) throws NegativePromotionalCostsException {
+        return new PromotionalCostImpl(promotionalCosts);
+    }
+
+    protected MarketingContribution newMarketingContribution(GrossProfit gp, PromotionalCost pc) {
+        return new MarketingContributionImpl(gp, pc);
     }
 
     @Override
